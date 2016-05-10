@@ -88,7 +88,6 @@ class TableViewController: UITableViewController {
             destinationViewController.plistError = errormsg
         }
         destinationViewController.plistTitle = plistTitle
-        //destinationViewController.plistError = TitledPlistReaderError.BadPlist
     }
 
 }
