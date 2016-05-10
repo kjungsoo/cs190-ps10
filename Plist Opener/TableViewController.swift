@@ -81,7 +81,14 @@ class TableViewController: UITableViewController {
         let plistFilename = plistFilenames[row]
         let plistTitle = (try? titleForPlist(plistFilename)) ?? "<No Title Found!>"
         let destinationViewController = segue.destinationViewController as! TitleViewController
+        do {
+            _ = try titleForPlist(plistFilename)
+        } catch let plistError {
+            let errormsg = plistError
+            destinationViewController.plistError = errormsg
+        }
         destinationViewController.plistTitle = plistTitle
+        //destinationViewController.plistError = TitledPlistReaderError.BadPlist
     }
 
 }

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Title View Controller-->
@@ -20,7 +21,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fV-rk-e7W">
                                 <rect key="frame" x="281" y="100" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GHl-ae-M7L">
@@ -35,19 +36,31 @@
                                     <segue destination="c61-ct-CNb" kind="unwind" unwindAction="back:" id="nVu-ti-nXG"/>
                                 </connections>
                             </button>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hMo-ua-LRB">
+                                <rect key="frame" x="225" y="333" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hMo-ua-LRB" secondAttribute="height" multiplier="75:15" id="xkb-qY-SgX"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GHl-ae-M7L" firstAttribute="centerX" secondItem="yh9-TU-gcq" secondAttribute="centerX" id="5As-nQ-PPI"/>
                             <constraint firstItem="Fer-g2-jAN" firstAttribute="top" secondItem="GHl-ae-M7L" secondAttribute="bottom" constant="50" id="5yj-le-cUb"/>
                             <constraint firstItem="9fV-rk-e7W" firstAttribute="centerX" secondItem="yh9-TU-gcq" secondAttribute="centerX" id="GdG-71-sM9"/>
+                            <constraint firstItem="hMo-ua-LRB" firstAttribute="centerX" secondItem="yh9-TU-gcq" secondAttribute="centerX" id="POc-mD-Fcx"/>
                             <constraint firstItem="Fer-g2-jAN" firstAttribute="centerX" secondItem="yh9-TU-gcq" secondAttribute="centerX" id="eqH-qJ-tPg"/>
                             <constraint firstItem="GHl-ae-M7L" firstAttribute="top" secondItem="9fV-rk-e7W" secondAttribute="bottom" constant="50" id="hXw-G8-3CD"/>
                             <constraint firstItem="9fV-rk-e7W" firstAttribute="top" secondItem="gCz-b6-CNu" secondAttribute="bottom" constant="100" id="m7q-0f-LLH"/>
+                            <constraint firstItem="hMo-ua-LRB" firstAttribute="top" secondItem="Fer-g2-jAN" secondAttribute="bottom" constant="52" id="uyd-ht-t0I"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
+                        <outlet property="errorTextField" destination="hMo-ua-LRB" id="8fK-vT-kwa"/>
                         <outlet property="titleTextField" destination="GHl-ae-M7L" id="1Az-Wz-f6P"/>
                         <outlet property="view" destination="yh9-TU-gcq" id="Ecy-aV-iQ5"/>
                     </connections>
@@ -70,7 +83,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ekY-IW-weo" id="mmU-rK-wsa">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
